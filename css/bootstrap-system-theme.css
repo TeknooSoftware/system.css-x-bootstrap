@@ -1,0 +1,917 @@
+/*!
+ * Bootstrap 5 System.css Theme v1.0.0
+ * Retro Apple System OS (1984-1991) theme for Bootstrap 5
+ * Based on system.css by @sakofchit
+ */
+
+/* ============================================
+   1. FONT FACES
+   ============================================ */
+@font-face {
+    font-family: Chicago;
+    src: url(../fonts/ChicagoFLF.woff) format("woff");
+    src: url(../fonts/ChicagoFLF.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: Monaco;
+    src: url(../fonts/monaco.woff) format("woff");
+    src: url(../fonts/monaco.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: Chicago_12;
+    src: url(../fonts/ChiKareGo2.woff) format("woff");
+    src: url(../fonts/ChiKareGo2.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: Geneva_9;
+    src: url(../fonts/FindersKeepers.woff) format("woff");
+    src: url(../fonts/FindersKeepers.woff2) format("woff2");
+}
+
+/* ============================================
+   2. CSS VARIABLES OVERRIDE
+   ============================================ */
+:root {
+    --bs-body-font-family: Chicago_12, -apple-system, system-ui, sans-serif;
+    --bs-body-font-size: 18px;
+    --bs-body-color: #000;
+    --bs-body-bg: #fff;
+    --bs-border-color: #000;
+    --bs-link-color: #000;
+    --bs-link-hover-color: #000;
+}
+
+/* ============================================
+   3. BODY AND BACKGROUNDS
+   ============================================ */
+body {
+    background: linear-gradient(90deg, #fff 21px, transparent 1%) 50%,
+                linear-gradient(#fff 21px, transparent 1%) 50%, #000;
+    background-attachment: fixed;
+    background-size: 22px 22px;
+    font-family: Chicago_12, Inconsolata, Menlo, Chicago, Geneva, sans-serif;
+    font-size: 18px;
+    letter-spacing: -0.025em;
+    line-height: normal;
+}
+
+/* ============================================
+   4. TYPOGRAPHY
+   ============================================ */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-weight: normal;
+    line-height: normal;
+}
+
+h1, .h1 {
+    font-family: Chicago;
+    font-size: 1em;
+}
+
+h2, .h2 {
+    font-family: Chicago;
+    font-size: 2em;
+}
+
+h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family: Chicago_12;
+    font-size: 1em;
+}
+
+/* Override Bootstrap display classes */
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-family: Chicago;
+    font-size: 2em;
+    font-weight: normal;
+    line-height: normal;
+}
+
+/* Override Bootstrap lead class */
+p, .lead {
+    font-family: Chicago_12;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: normal;
+}
+
+a {
+    color: #000;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+hr {
+    border-top: 0.15em solid #000;
+    opacity: 1;
+}
+
+/* ============================================
+   5. SCROLLBARS
+   ============================================ */
+::-webkit-scrollbar {
+    background-color: #fff;
+    width: 22px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(45deg, #000 25%, transparent 0, transparent 75%, #000 0, #000),
+                linear-gradient(45deg, #000 25%, transparent 0, transparent 75%, #000 0, #000);
+    background-color: #fff;
+    background-position: 0 0, 2px 2px;
+    background-size: 4px 4px;
+    border-left: 3px solid #000;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border: 2px solid #000;
+    border-right: none;
+    box-sizing: content-box;
+    width: 20px;
+}
+
+/* ============================================
+   6. BOOTSTRAP BUTTONS OVERRIDE
+   ============================================ */
+.btn {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 4px;
+    color: #000;
+    cursor: pointer;
+    font-family: Chicago_12;
+    font-size: 18px;
+    min-height: 20px;
+    min-width: 59px;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+    border-radius: 4px;
+}
+
+/* Active = clic en cours (temporaire) */
+.btn:active {
+    background: #000;
+    border-radius: 6px;
+    color: #fff;
+    border-color: #000;
+}
+
+/* Focus = pour accessibilité clavier (outline uniquement) */
+.btn:focus-visible {
+    outline: 2px dashed #000;
+    outline-offset: 3px;
+}
+
+.btn:disabled,
+.btn.disabled {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 4px;
+    color: #b6b7b8;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Button Primary - Bleu (Apple QuickDraw Blue assombri) */
+.btn-primary {
+    border: 3px solid #0033cc;
+    border-radius: 6px;
+    background: #fff;
+    color: #0033cc;
+}
+
+.btn-primary:hover {
+    background: #0033cc;
+    color: #fff;
+    border-color: #0033cc;
+    border-radius: 6px;
+}
+
+.btn-primary:active {
+    border-radius: 8px;
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.btn-primary:focus-visible {
+    outline: 2px dashed #0033cc;
+    outline-offset: 3px;
+}
+
+/* Button Secondary - Gris (Apple QuickDraw Gray assombri) */
+.btn-secondary {
+    background: #fff;
+    border: 2px solid #555555;
+    border-radius: 4px;
+    color: #555555;
+}
+
+.btn-secondary:hover {
+    background: #555555;
+    color: #fff;
+    border-color: #555555;
+    border-radius: 4px;
+}
+
+.btn-secondary:active {
+    background: #000;
+    border-radius: 6px;
+    color: #fff;
+    border-color: #000;
+}
+
+.btn-secondary:focus-visible {
+    outline: 2px dashed #555555;
+    outline-offset: 3px;
+}
+
+/* Button Success - Vert (Apple QuickDraw Green assombri) */
+.btn-success {
+    background: #fff;
+    border: 2px solid #006600;
+    border-radius: 4px;
+    color: #006600;
+}
+
+.btn-success:hover {
+    background: #006600;
+    color: #fff;
+    border-color: #006600;
+    border-radius: 4px;
+}
+
+.btn-success:active {
+    background: #000;
+    border-radius: 6px;
+    color: #fff;
+    border-color: #000;
+}
+
+.btn-success:focus-visible {
+    outline: 2px dashed #006600;
+    outline-offset: 3px;
+}
+
+/* Button Danger - Rouge (Apple QuickDraw Red assombri) */
+.btn-danger {
+    background: #fff;
+    border: 2px solid #aa0000;
+    border-radius: 4px;
+    color: #aa0000;
+}
+
+.btn-danger:hover {
+    background: #aa0000;
+    color: #fff;
+    border-color: #aa0000;
+    border-radius: 4px;
+}
+
+.btn-danger:active {
+    background: #000;
+    border-radius: 6px;
+    color: #fff;
+    border-color: #000;
+}
+
+.btn-danger:focus-visible {
+    outline: 2px dashed #aa0000;
+    outline-offset: 3px;
+}
+
+/* Button Warning - Orange (Apple QuickDraw Orange assombri) */
+.btn-warning {
+    background: #fff;
+    border: 2px solid #cc5500;
+    border-radius: 4px;
+    color: #cc5500;
+}
+
+.btn-warning:hover {
+    background: #cc5500;
+    color: #fff;
+    border-color: #cc5500;
+    border-radius: 4px;
+}
+
+.btn-warning:active {
+    background: #000;
+    border-radius: 6px;
+    color: #fff;
+    border-color: #000;
+}
+
+.btn-warning:focus-visible {
+    outline: 2px dashed #cc5500;
+    outline-offset: 3px;
+}
+
+/* Button Info - Cyan (Apple QuickDraw Cyan assombri) */
+.btn-info {
+    background: #fff;
+    border: 2px solid #0099cc;
+    border-radius: 4px;
+    color: #0099cc;
+}
+
+.btn-info:hover {
+    background: #0099cc;
+    color: #fff;
+    border-color: #0099cc;
+    border-radius: 4px;
+}
+
+.btn-info:active {
+    background: #000;
+    border-radius: 6px;
+    color: #fff;
+    border-color: #000;
+}
+
+.btn-info:focus-visible {
+    outline: 2px dashed #0099cc;
+    outline-offset: 3px;
+}
+
+/* Button Light - Gris moyen (Apple QuickDraw Gray assombri) */
+.btn-light {
+    background: #fff;
+    border: 2px solid #999999;
+    border-radius: 4px;
+    color: #666666;
+}
+
+.btn-light:hover {
+    background: #999999;
+    color: #fff;
+    border-color: #999999;
+    border-radius: 4px;
+}
+
+.btn-light:active {
+    background: #000;
+    border-radius: 6px;
+    color: #fff;
+    border-color: #000;
+}
+
+.btn-light:focus-visible {
+    outline: 2px dashed #999999;
+    outline-offset: 3px;
+}
+
+/* Button Dark - Noir (Apple QuickDraw Black) */
+.btn-dark {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 4px;
+    color: #000;
+}
+
+.btn-dark:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+    border-radius: 4px;
+}
+
+.btn-dark:active {
+    background: #000;
+    border-radius: 6px;
+    color: #fff;
+    border-color: #000;
+}
+
+.btn-dark:focus-visible {
+    outline: 2px dashed #000;
+    outline-offset: 3px;
+}
+
+/* ============================================
+   7. BOOTSTRAP FORMS OVERRIDE
+   ============================================ */
+.form-control,
+.form-select {
+    border: 1.5px solid #000;
+    font-family: Chicago_12;
+    font-size: 18px;
+    padding-left: 5px;
+    border-radius: 0;
+    background-color: #fff;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+    outline: none;
+    box-shadow: none;
+}
+
+.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='17' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M0 0h17v17H0z'/%3E%3Cpath fill='%23000' d='M2 5h13v1H2zM4 7h9v1H4zM5 8h7v1H5zM6 9h5v1H6zM7 10h3v1H7zM8 11h1v1H8zM3 6h11v1H3z'/%3E%3C/svg%3E");
+    background-position: top 2px right 2px;
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 0 -1px #000;
+}
+
+textarea.form-control {
+    font-family: Chicago_12;
+}
+
+textarea.form-control:focus {
+    background: #000;
+    color: #fff;
+}
+
+/* Checkboxes */
+.form-check-input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #fff;
+    border: 1.5px solid #000;
+    margin: 0;
+    margin-top: 0.25em;
+    width: 13px;
+    height: 13px;
+    border-radius: 0;
+}
+
+.form-check-input[type="checkbox"]:focus {
+    outline: 1px solid #000;
+    box-shadow: none;
+    border-color: #000;
+}
+
+.form-check-input[type="checkbox"]:checked {
+    background-color: #fff;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h1v1H0zM1 1h1v1H1zM2 2h1v1H2zM3 3h1v1H3zM4 4h1v1H4zM5 5h1v1H5zM6 6h1v1H6zM7 7h1v1H7zM8 8h1v1H8zM9 9h1v1H9zM10 10h1v1h-1zM11 11h1v1h-1zM11 0h1v1h-1zM10 1h1v1h-1zM9 2h1v1H9zM8 3h1v1H8zM7 4h1v1H7zM6 5h1v1H6zM5 6h1v1H5zM4 7h1v1H4zM3 8h1v1H3zM2 9h1v1H2zM1 10h1v1H1zM0 11h1v1H0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: #000;
+}
+
+/* Radio buttons */
+.form-check-input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0h4v1H4zM0 4h1v4H0zM11 4h1v4h-1zM2 1h2v1H2zM8 1h2v1H8zM10 2h1v2h-1zM1 2h1v2H1zM4 11h4v1H4zM2 10h2v1H2zM8 10h2v1H8zM10 8h1v2h-1zM1 8h1v2H1z'/%3E%3C/svg%3E");
+    border: none;
+    margin: 0;
+    margin-top: 0.25em;
+    width: 12px;
+    height: 12px;
+    border-radius: 0;
+}
+
+.form-check-input[type="radio"]:focus {
+    box-shadow: none;
+}
+
+.form-check-input[type="radio"]:hover {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0h4v2H4zM0 4h2v4H0zM10 4h2v4h-2zM2 1h2v2H2zM8 1h2v2H8z'/%3E%3Cpath d='M9 2h2v2H9zM1 2h2v2H1zM4 10h4v2H4zM2 9h2v2H2zM8 9h2v2H8z'/%3E%3Cpath d='M9 8h2v2H9zM1 8h2v2H1z'/%3E%3C/svg%3E");
+}
+
+.form-check-input[type="radio"]:checked::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='7' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0h4v1H1zM1 5h4v1H1zM0 1h6v4H0z'/%3E%3C/svg%3E");
+    position: relative;
+    top: 3px;
+    left: 3px;
+}
+
+.form-check-label {
+    font-family: Chicago_12;
+    line-height: 20px;
+    padding-left: 5px;
+}
+
+/* ============================================
+   8. BOOTSTRAP CARDS OVERRIDE
+   ============================================ */
+.card {
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 2px 2px;
+    border-radius: 0;
+}
+
+.card-header,
+.card-footer {
+    background-color: #fff;
+    border-color: #000;
+}
+
+.card-title {
+    font-family: Chicago_12;
+}
+
+/* ============================================
+   9. BOOTSTRAP MODALS OVERRIDE
+   ============================================ */
+.modal-content {
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 2px 2px;
+    border-radius: 0;
+    font-family: Chicago_12;
+}
+
+.modal-header {
+    border-bottom: 0.1rem solid #000;
+    background-color: #fff;
+}
+
+.modal-title {
+    font-family: Chicago_12;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.modal-footer {
+    border-top: 0.1rem solid #000;
+}
+
+.modal-backdrop {
+    opacity: 0.5;
+}
+
+.btn-close {
+    background: transparent;
+    opacity: 1;
+}
+
+/* ============================================
+   10. BOOTSTRAP ALERTS OVERRIDE
+   ============================================ */
+.alert {
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 2px 2px;
+    padding: 10px;
+    border-radius: 0;
+    color: #000;
+    font-family: Chicago_12;
+}
+
+.alert-primary,
+.alert-secondary,
+.alert-success,
+.alert-danger,
+.alert-warning,
+.alert-info,
+.alert-light,
+.alert-dark {
+    background-color: #fff;
+    border: 2px solid #000;
+    color: #000;
+}
+
+/* ============================================
+   11. BOOTSTRAP TABLES OVERRIDE
+   ============================================ */
+.table {
+    border-color: #000;
+    font-family: Chicago_12;
+}
+
+.table > :not(caption) > * > * {
+    border-bottom-color: #000;
+    background-color: #fff;
+    color: #000;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #fff;
+}
+
+.table-hover > tbody > tr:hover > * {
+    background-color: #000;
+    color: #fff;
+}
+
+/* ============================================
+   12. BOOTSTRAP NAVBAR OVERRIDE
+   ============================================ */
+.navbar {
+    background: #fff !important;
+    border-bottom: 1px solid #000;
+    font-family: Chicago_12;
+    padding: 0;
+}
+
+.navbar-brand {
+    color: #000 !important;
+    font-family: Chicago_12;
+    padding: 6px 10px;
+}
+
+.navbar-brand:hover {
+    background: #000;
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #000 !important;
+    padding: 6px 10px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    background: #000;
+    color: #fff !important;
+}
+
+.navbar-toggler {
+    border: 2px solid #000;
+    border-radius: 0;
+}
+
+.dropdown-menu {
+    background: #fff;
+    border: 1px solid #000;
+    box-shadow: 2px 2px;
+    border-radius: 0;
+    min-width: 200px;
+}
+
+.dropdown-item {
+    color: #000;
+    font-family: Chicago_12;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background: #000;
+    color: #fff;
+}
+
+/* ============================================
+   13. BOOTSTRAP BADGES OVERRIDE
+   ============================================ */
+.badge {
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+    font-family: Chicago_12;
+    border-radius: 0;
+    padding: 2px 6px;
+}
+
+/* ============================================
+   14. BOOTSTRAP PAGINATION OVERRIDE
+   ============================================ */
+.pagination {
+    font-family: Chicago_12;
+}
+
+.page-link {
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+    border-radius: 0;
+}
+
+.page-link:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.page-item.active .page-link {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* ============================================
+   15. SYSTEM.CSS SPECIFIC COMPONENTS
+   ============================================ */
+
+/* Window Component */
+.window {
+    background-color: #fff;
+    border: 0.1em solid #000;
+    flex-direction: column;
+    font-family: Inconsolata, Menlo, Chicago, Geneva;
+    margin: 1rem;
+    min-width: 320px;
+    overflow: hidden;
+}
+
+/* Title Bar */
+.title-bar {
+    align-items: center;
+    background: linear-gradient(#000 50%, transparent 0);
+    background-clip: content-box;
+    background-size: 6.6666666667% 13.3333333333%;
+    display: flex;
+    flex: none;
+    height: 1.5rem;
+    margin: 0.1rem 0;
+    padding: 0.2rem 0.1rem;
+}
+
+.title-bar .title {
+    background: #fff;
+    cursor: default;
+    font-family: Chicago_12;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 auto;
+    padding: 0 0.5em;
+    text-align: center;
+}
+
+.title-bar button {
+    background-color: #fff;
+    border: 4px solid #000;
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    margin: 0 0.2rem;
+    position: relative;
+    transform: scale(0.5);
+    width: 40px;
+}
+
+.title-bar button.close::before {
+    background: linear-gradient(#000, #000) 0, linear-gradient(#000, #000) 100%,
+                linear-gradient(#000, #000) top, linear-gradient(#000, #000) bottom;
+    background-repeat: no-repeat;
+    background-size: 30% 4px, 30% 4px, 4px 30%, 4px 30%;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.title-bar button.close::after {
+    background: linear-gradient(#000, #000) 0, linear-gradient(#000, #000) 100%,
+                linear-gradient(#000, #000) top, linear-gradient(#000, #000) bottom;
+    background-repeat: no-repeat;
+    background-size: 22.5% 3.6363636364px, 22.5% 3.6363636364px,
+                     3.6363636364px 22.5%, 3.6363636364px 22.5%;
+    transform: rotate(45deg) scale(1.1);
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.title-bar button.close:active::before,
+.title-bar button.close:active::after {
+    opacity: 1;
+}
+
+.title-bar button.resize {
+    background: linear-gradient(#000, #000) left 58%,
+                linear-gradient(180deg, #000 0, #000) 58% top;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 60% 4px, 4px 60%;
+}
+
+.title-bar button.resize:active {
+    background: #fff;
+}
+
+.title-bar button.hidden {
+    visibility: hidden;
+}
+
+/* Separator */
+.separator {
+    border-width: 0.1rem 0;
+    border-top: 0.1rem solid #000;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    font-size: 1rem;
+    justify-content: space-between;
+}
+
+/* Window Pane */
+.window-pane {
+    font-size: 18px;
+    height: 100%;
+    letter-spacing: -0.025em;
+    overflow-y: scroll;
+    padding: 1rem 2rem;
+}
+
+.window-pane::-webkit-scrollbar {
+    background-color: #fff;
+    width: 22px;
+}
+
+.window-pane::-webkit-scrollbar-track {
+    background: linear-gradient(45deg, #000 25%, transparent 0, transparent 75%, #000 0, #000),
+                linear-gradient(45deg, #000 25%, transparent 0, transparent 75%, #000 0, #000);
+    background-color: #fff;
+    background-position: 0 0, 2px 2px;
+    background-size: 4px 4px;
+    border-left: 4px solid #000;
+    width: 10px;
+}
+
+.window-pane::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border: 2px solid #000;
+    border-right: none;
+    box-sizing: content-box;
+    width: 20px;
+}
+
+/* Standard Dialog */
+.standard-dialog {
+    background-color: #fff;
+    border: 2px solid;
+    box-shadow: 2px 2px;
+    padding: 10px;
+}
+
+/* Headings */
+.heading {
+    font-size: 1em;
+    font-family: Chicago;
+}
+
+.heading.center {
+    text-align: center;
+}
+
+.subheading {
+    font-family: Chicago_12;
+}
+
+/* Apple Logo */
+.apple {
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='18' height='22' viewBox='0 0 9 11' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 0h2v1H5zM4 1h2v1H4zM4 2h1v1H4zM1 3h3v1H1zM5 3h3v1H5zM0 4h9v1H0zM0 5h7v2H0zM0 7h9v2H0zM1 9h7v1H1zM2 10h2v1H2zM5 10h2v1H5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    border: none;
+    display: inline-block;
+    height: 22px;
+    margin-right: 2px;
+    width: 18px;
+}
+
+/* Menu Items */
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items > li {
+    margin-bottom: 1rem;
+}
+
+/* Field Row */
+.field-row {
+    align-items: center;
+    display: flex;
+    font-family: Chicago_12;
+    font-size: 1em;
+}
+
+.field-row + .field-row {
+    margin-top: 6px;
+}
+
+.field-row > * + * {
+    margin-left: 6px;
+}
