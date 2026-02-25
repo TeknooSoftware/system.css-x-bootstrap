@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 + System.css Theme Demo</title>
+    <!-- Bootstrap 5.3.8 CSS (Local) -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- System.css Theme Override -->
+    <link href="css/bootstrap-system-theme.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar Bootstrap with System.css Theme -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <span class="apple" role="img" aria-label="Apple"></span>
+                System Bootstrap
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Components
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#buttons">Buttons</a></li>
+                            <li><a class="dropdown-item" href="#forms">Forms</a></li>
+                            <li><a class="dropdown-item" href="#cards">Cards</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#windows">Windows</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container my-5">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h1 class="display-4">Bootstrap 5 + System.css Theme</h1>
+                <p class="lead">Tous les composants Bootstrap 5 avec l'apparence rétro Apple System OS (1984-1991)</p>
+            </div>
+        </div>
+
+        <!-- Buttons Section -->
+        <section id="buttons" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Boutons Bootstrap</h2>
+                    <p>Tous les boutons Bootstrap avec le style system.css</p>
+
+                    <h5 class="mt-4">Boutons standards :</h5>
+                    <button class="btn btn-primary">Primary</button>
+                    <button class="btn btn-secondary">Secondary</button>
+                    <button class="btn btn-success">Success</button>
+                    <button class="btn btn-danger">Danger</button>
+                    <button class="btn btn-warning">Warning</button>
+                    <button class="btn btn-info">Info</button>
+
+                    <h5 class="mt-4">Tailles :</h5>
+                    <button class="btn btn-primary btn-sm">Small</button>
+                    <button class="btn btn-primary">Normal</button>
+                    <button class="btn btn-primary btn-lg">Large</button>
+
+                    <h5 class="mt-4">États :</h5>
+                    <button class="btn btn-primary">Enabled</button>
+                    <button class="btn btn-primary" disabled>Disabled</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bootstrap Grid -->
+        <section id="grid" class="mb-5">
+            <h2>Grille Bootstrap (fonctionnalité intacte)</h2>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Colonne 1</h5>
+                            <p class="card-text">La grille Bootstrap fonctionne normalement avec le thème system.css.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Colonne 2</h5>
+                            <p class="card-text">Système de 12 colonnes responsive complet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Colonne 3</h5>
+                            <p class="card-text">Breakpoints et utilitaires disponibles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms Section -->
+        <section id="forms" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Formulaires Bootstrap</h2>
+
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">Prénom</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Jean">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Dupont">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="nom@exemple.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="country" class="form-label">Pays</label>
+                            <select class="form-select" id="country">
+                                <option>France</option>
+                                <option>Belgique</option>
+                                <option>Suisse</option>
+                                <option>Canada</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+
+                        <fieldset class="mb-3">
+                            <legend class="col-form-label">Checkboxes</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check1" checked>
+                                <label class="form-check-label" for="check1">
+                                    Newsletter hebdomadaire
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check2">
+                                <label class="form-check-label" for="check2">
+                                    Offres spéciales
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check3" checked>
+                                <label class="form-check-label" for="check3">
+                                    Mises à jour produits
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="mb-3">
+                            <legend class="col-form-label">Radio buttons</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="plan" id="radio1" checked>
+                                <label class="form-check-label" for="radio1">
+                                    Plan gratuit
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="plan" id="radio2">
+                                <label class="form-check-label" for="radio2">
+                                    Plan standard
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="plan" id="radio3">
+                                <label class="form-check-label" for="radio3">
+                                    Plan premium
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <button type="reset" class="btn btn-secondary">Réinitialiser</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section id="cards" class="mb-5">
+            <h2>Cards Bootstrap</h2>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card Title 1</h5>
+                            <p class="card-text">Les cards Bootstrap utilisent maintenant les bordures et ombres de system.css.</p>
+                            <button class="btn btn-primary">Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card Title 2</h5>
+                            <p class="card-text">Design monochrome noir et blanc authentique du System OS.</p>
+                            <button class="btn btn-secondary">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card Title 3</h5>
+                            <p class="card-text">Fonctionnalité Bootstrap complète avec apparence rétro.</p>
+                            <button class="btn btn-success">Continuer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alerts Section -->
+        <section id="alerts" class="mb-5">
+            <h2>Alerts Bootstrap</h2>
+            <div class="alert alert-primary" role="alert">
+                Alerte Primary - Toutes les alertes Bootstrap utilisent le style system.css
+            </div>
+            <div class="alert alert-success" role="alert">
+                <strong>Succès!</strong> Votre opération a été effectuée avec succès.
+            </div>
+            <div class="alert alert-warning" role="alert">
+                <strong>Attention!</strong> Cette action nécessite votre confirmation.
+            </div>
+            <div class="alert alert-danger" role="alert">
+                <strong>Erreur!</strong> Une erreur s'est produite lors du traitement.
+            </div>
+        </section>
+
+        <!-- Table Section -->
+        <section id="tables" class="mb-5">
+            <h2>Tables Bootstrap</h2>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Application</th>
+                                <th>Version</th>
+                                <th>Taille</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Finder</td>
+                                <td>6.1.8</td>
+                                <td>512 KB</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>MacWrite</td>
+                                <td>5.0</td>
+                                <td>256 KB</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>MacPaint</td>
+                                <td>2.0</td>
+                                <td>128 KB</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>HyperCard</td>
+                                <td>2.4.1</td>
+                                <td>1.4 MB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Demo -->
+        <section id="modals" class="mb-5">
+            <h2>Modal Bootstrap</h2>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Ouvrir Modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Ceci est une modale Bootstrap avec le thème system.css. Toutes les fonctionnalités JavaScript de Bootstrap sont préservées.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-primary">Confirmer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Badges and Pagination -->
+        <section id="badges" class="mb-5">
+            <h2>Badges Bootstrap</h2>
+            <p>
+                <span class="badge">Primary</span>
+                <span class="badge">Secondary</span>
+                <span class="badge">Success</span>
+                <span class="badge">Danger</span>
+                <span class="badge">Warning</span>
+                <span class="badge">Info</span>
+            </p>
+
+            <h2 class="mt-4">Pagination Bootstrap</h2>
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- System.css Specific Components -->
+        <section id="windows" class="mb-5">
+            <h2>Composants spécifiques System.css</h2>
+            <p>Ces composants sont ajoutés par system.css et ne font pas partie de Bootstrap :</p>
+
+            <!-- Window Component -->
+            <aside class="window" style="max-width: 600px; margin: 0 auto;">
+                <div class="title-bar">
+                    <button aria-label="Close" class="close"></button>
+                    <h1 class="title">Untitled Document</h1>
+                    <button aria-label="Resize" class="resize"></button>
+                </div>
+                <div class="separator"></div>
+                <div class="window-pane" style="max-height: 300px;">
+                    <p class="heading center">Fenêtre System OS</p>
+                    <p>Ceci est une fenêtre authentique style System OS avec :</p>
+                    <ul class="menu-items">
+                        <li>Barre de titre avec rayures horizontales</li>
+                        <li>Boutons de fermeture et redimensionnement</li>
+                        <li>Séparateur caractéristique</li>
+                        <li>Zone de contenu scrollable</li>
+                        <li>Scrollbars avec motif en damier</li>
+                    </ul>
+                    <p>Ce composant peut être utilisé en complément de Bootstrap pour créer des interfaces rétro authentiques.</p>
+                </div>
+            </aside>
+
+            <!-- Standard Dialog -->
+            <div class="standard-dialog mt-4" style="max-width: 400px; margin: 20px auto;">
+                <p class="heading center">Standard Dialog</p>
+                <p style="text-align: center; margin: 20px 0;">
+                    Boîte de dialogue standard System OS<br>
+                    avec bordure et ombre portée
+                </p>
+                <div style="text-align: center;">
+                    <button class="btn">Cancel</button>
+                    <button class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="mb-5">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h2>À propos</h2>
+                    <p><strong>Bootstrap 5.3.8 + System.css Theme</strong></p>
+                    <p>Ce thème combine la puissance de Bootstrap 5 (grille, composants, JavaScript) avec l'esthétique rétro d'Apple System OS (1984-1991).</p>
+
+                    <h5 class="mt-4">Avantages :</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✅ Tous les composants Bootstrap 5 disponibles</li>
+                        <li>✅ Grille responsive complète</li>
+                        <li>✅ JavaScript Bootstrap fonctionnel (modals, dropdowns, etc.)</li>
+                        <li>✅ Thème visuel system.css authentique</li>
+                        <li>✅ Composants additionnels system.css (.window, .title-bar, etc.)</li>
+                        <li>✅ Polices Chicago et Monaco incluses</li>
+                    </ul>
+
+                    <p class="mt-4">
+                        <a href="https://github.com/sakofchit/system.css" target="_blank">System.css GitHub</a> |
+                        <a href="https://getbootstrap.com/docs/5.3/" target="_blank">Bootstrap 5 Docs</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background: #fff; border-top: 1px solid #000; text-align: center;">
+        <p>&copy; 2025 Bootstrap 5 + System.css Theme Demo</p>
+    </footer>
+
+    <!-- Bootstrap 5.3.8 JavaScript Bundle (Local) -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

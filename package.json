@@ -1,0 +1,23 @@
+{
+  "name": "system-css-x-bootstrap",
+  "version": "1.0.0",
+  "description": "Bootstrap 5 System.css Theme - Retro Apple System OS (1984-1991) theme",
+  "main": "index.html",
+  "scripts": {
+    "css:minify": "csso css/bootstrap-system-theme.css -o css/bootstrap-system-theme.min.css",
+    "css:watch": "csso css/bootstrap-system-theme.css -o css/bootstrap-system-theme.min.css --watch",
+    "css:minify:stats": "csso css/bootstrap-system-theme.css -o css/bootstrap-system-theme.min.css --stat"
+  },
+  "keywords": [
+    "bootstrap",
+    "system-css",
+    "retro",
+    "apple",
+    "theme"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "csso-cli": "^4.0.2"
+  }
+}
