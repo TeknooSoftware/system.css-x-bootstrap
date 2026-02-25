@@ -35,13 +35,246 @@
    2. CSS VARIABLES OVERRIDE
    ============================================ */
 :root {
+    /* Base colors - Classic Apple System (black & white only) */
+    --bs-blue: #0033cc;
+    --bs-indigo: #0033cc;
+    --bs-purple: #0033cc;
+    --bs-pink: #aa0000;
+    --bs-red: #aa0000;
+    --bs-orange: #cc5500;
+    --bs-yellow: #cc5500;
+    --bs-green: #006600;
+    --bs-teal: #0099cc;
+    --bs-cyan: #0099cc;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #555555;
+    --bs-gray-dark: #000;
+
+    /* Gray scale */
+    --bs-gray-100: #fff;
+    --bs-gray-200: #fff;
+    --bs-gray-300: #e9e9e9;
+    --bs-gray-400: #c0c0c0;
+    --bs-gray-500: #999999;
+    --bs-gray-600: #666666;
+    --bs-gray-700: #555555;
+    --bs-gray-800: #000;
+    --bs-gray-900: #000;
+
+    /* Semantic colors */
+    --bs-primary: #151515;
+    --bs-secondary: #555555;
+    --bs-success: #006600;
+    --bs-info: #0099cc;
+    --bs-warning: #cc5500;
+    --bs-danger: #aa0000;
+    --bs-light: #fff;
+    --bs-dark: #000;
+
+    /* RGB values for compatibility */
+    --bs-primary-rgb: 0, 51, 204;
+    --bs-secondary-rgb: 85, 85, 85;
+    --bs-success-rgb: 0, 102, 0;
+    --bs-info-rgb: 0, 153, 204;
+    --bs-warning-rgb: 204, 85, 0;
+    --bs-danger-rgb: 170, 0, 0;
+    --bs-light-rgb: 255, 255, 255;
+    --bs-dark-rgb: 0, 0, 0;
+
+    /* Text emphasis - Keep it simple (black or theme color) */
+    --bs-primary-text-emphasis: #151515;
+    --bs-secondary-text-emphasis: #555555;
+    --bs-success-text-emphasis: #006600;
+    --bs-info-text-emphasis: #0099cc;
+    --bs-warning-text-emphasis: #cc5500;
+    --bs-danger-text-emphasis: #aa0000;
+    --bs-light-text-emphasis: #000;
+    --bs-dark-text-emphasis: #000;
+
+    /* Background subtle - White only for System theme */
+    --bs-primary-bg-subtle: #fff;
+    --bs-secondary-bg-subtle: #fff;
+    --bs-success-bg-subtle: #fff;
+    --bs-info-bg-subtle: #fff;
+    --bs-warning-bg-subtle: #fff;
+    --bs-danger-bg-subtle: #fff;
+    --bs-light-bg-subtle: #fff;
+    --bs-dark-bg-subtle: #fff;
+
+    /* Border subtle - Black borders for System theme */
+    --bs-primary-border-subtle: #151515;
+    --bs-secondary-border-subtle: #555555;
+    --bs-success-border-subtle: #006600;
+    --bs-info-border-subtle: #0099cc;
+    --bs-warning-border-subtle: #cc5500;
+    --bs-danger-border-subtle: #aa0000;
+    --bs-light-border-subtle: #000;
+    --bs-dark-border-subtle: #000;
+
+    /* RGB for white and black */
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 0, 0, 0;
+
+    /* Typography */
+    --bs-font-sans-serif: Chicago_12, -apple-system, system-ui, sans-serif;
+    --bs-font-monospace: Monaco, Menlo, Consolas, monospace;
+    --bs-gradient: none;
+
+    /* Body defaults */
     --bs-body-font-family: Chicago_12, -apple-system, system-ui, sans-serif;
     --bs-body-font-size: 18px;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: normal;
     --bs-body-color: #000;
+    --bs-body-color-rgb: 0, 0, 0;
     --bs-body-bg: #fff;
+    --bs-body-bg-rgb: 255, 255, 255;
+
+    /* Emphasis */
+    --bs-emphasis-color: #000;
+    --bs-emphasis-color-rgb: 0, 0, 0;
+
+    /* Secondary colors */
+    --bs-secondary-color: #000;
+    --bs-secondary-color-rgb: 0, 0, 0;
+    --bs-secondary-bg: #fff;
+    --bs-secondary-bg-rgb: 255, 255, 255;
+
+    /* Tertiary colors */
+    --bs-tertiary-color: #000;
+    --bs-tertiary-color-rgb: 0, 0, 0;
+    --bs-tertiary-bg: #fff;
+    --bs-tertiary-bg-rgb: 255, 255, 255;
+
+    /* Headings */
+    --bs-heading-color: #000;
+
+    /* Links */
+    --bs-link-color: #000;
+    --bs-link-color-rgb: 0, 0, 0;
+    --bs-link-decoration: underline;
+    --bs-link-hover-color: #000;
+    --bs-link-hover-color-rgb: 0, 0, 0;
+
+    /* Code */
+    --bs-code-color: #000;
+    --bs-highlight-color: #000;
+    --bs-highlight-bg: #fff;
+
+    /* Borders - No rounded corners for System theme */
+    --bs-border-width: 2px;
+    --bs-border-style: solid;
     --bs-border-color: #000;
+    --bs-border-color-translucent: #000;
+    --bs-border-radius: 0;
+    --bs-border-radius-sm: 0;
+    --bs-border-radius-lg: 0;
+    --bs-border-radius-xl: 0;
+    --bs-border-radius-xxl: 0;
+    --bs-border-radius-2xl: 0;
+    --bs-border-radius-pill: 0;
+
+    /* Box shadows - No shadows for System theme */
+    --bs-box-shadow: none;
+    --bs-box-shadow-sm: none;
+    --bs-box-shadow-lg: none;
+    --bs-box-shadow-inset: none;
+
+    /* Focus ring - System style (dashed outline) */
+    --bs-focus-ring-width: 2px;
+    --bs-focus-ring-opacity: 1;
+    --bs-focus-ring-color: #000;
+
+    /* Form validation */
+    --bs-form-valid-color: #006600;
+    --bs-form-valid-border-color: #006600;
+    --bs-form-invalid-color: #aa0000;
+    --bs-form-invalid-border-color: #aa0000;
+
+    /* Button variables - Complete override for System.css theme */
+    --bs-btn-padding-x: 20px;
+    --bs-btn-padding-y: 4px;
+    --bs-btn-font-family: Chicago_12, -apple-system, system-ui, sans-serif;
+    --bs-btn-font-size: 18px;
+    --bs-btn-font-weight: 400;
+    --bs-btn-line-height: normal;
+    --bs-btn-color: #000;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-width: 2px;
+    --bs-btn-border-color: #000;
+    --bs-btn-border-radius: 4px;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #000;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-active-shadow: none;
+    --bs-btn-disabled-color: #b6b7b8;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #000;
+    --bs-btn-disabled-opacity: 0.6;
+    --bs-btn-focus-box-shadow: none;
+    --bs-btn-box-shadow: none;
+    --bs-btn-focus-shadow-rgb: 0, 0, 0;
+}
+
+/* Neutralize dark theme - Force classic black & white */
+[data-bs-theme="dark"] {
+    color-scheme: light;
+    --bs-body-color: #000;
+    --bs-body-color-rgb: 0, 0, 0;
+    --bs-body-bg: #fff;
+    --bs-body-bg-rgb: 255, 255, 255;
+    --bs-emphasis-color: #000;
+    --bs-emphasis-color-rgb: 0, 0, 0;
+    --bs-secondary-color: #000;
+    --bs-secondary-color-rgb: 0, 0, 0;
+    --bs-secondary-bg: #fff;
+    --bs-secondary-bg-rgb: 255, 255, 255;
+    --bs-tertiary-color: #000;
+    --bs-tertiary-color-rgb: 0, 0, 0;
+    --bs-tertiary-bg: #fff;
+    --bs-tertiary-bg-rgb: 255, 255, 255;
+    --bs-primary-text-emphasis: #151515;
+    --bs-secondary-text-emphasis: #555555;
+    --bs-success-text-emphasis: #006600;
+    --bs-info-text-emphasis: #0099cc;
+    --bs-warning-text-emphasis: #cc5500;
+    --bs-danger-text-emphasis: #aa0000;
+    --bs-light-text-emphasis: #000;
+    --bs-dark-text-emphasis: #000;
+    --bs-primary-bg-subtle: #fff;
+    --bs-secondary-bg-subtle: #fff;
+    --bs-success-bg-subtle: #fff;
+    --bs-info-bg-subtle: #fff;
+    --bs-warning-bg-subtle: #fff;
+    --bs-danger-bg-subtle: #fff;
+    --bs-light-bg-subtle: #fff;
+    --bs-dark-bg-subtle: #fff;
+    --bs-primary-border-subtle: #151515;
+    --bs-secondary-border-subtle: #555555;
+    --bs-success-border-subtle: #006600;
+    --bs-info-border-subtle: #0099cc;
+    --bs-warning-border-subtle: #cc5500;
+    --bs-danger-border-subtle: #aa0000;
+    --bs-light-border-subtle: #000;
+    --bs-dark-border-subtle: #000;
+    --bs-heading-color: #000;
     --bs-link-color: #000;
     --bs-link-hover-color: #000;
+    --bs-link-color-rgb: 0, 0, 0;
+    --bs-link-hover-color-rgb: 0, 0, 0;
+    --bs-code-color: #000;
+    --bs-highlight-color: #000;
+    --bs-highlight-bg: #fff;
+    --bs-border-color: #000;
+    --bs-border-color-translucent: #000;
+    --bs-form-valid-color: #006600;
+    --bs-form-valid-border-color: #006600;
+    --bs-form-invalid-color: #aa0000;
+    --bs-form-invalid-border-color: #aa0000;
 }
 
 /* ============================================
@@ -141,7 +374,35 @@ hr {
 /* ============================================
    6. BOOTSTRAP BUTTONS OVERRIDE
    ============================================ */
+
+/* Override Bootstrap button variant CSS variables */
 .btn {
+    /* Override local CSS variables at .btn level */
+    --bs-btn-padding-x: 20px;
+    --bs-btn-padding-y: 4px;
+    --bs-btn-font-family: Chicago_12, -apple-system, system-ui, sans-serif;
+    --bs-btn-font-size: 18px;
+    --bs-btn-font-weight: 400;
+    --bs-btn-line-height: normal;
+    --bs-btn-color: #000;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-width: 2px;
+    --bs-btn-border-color: #000;
+    --bs-btn-border-radius: 4px;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #000;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-active-shadow: none;
+    --bs-btn-disabled-color: #b6b7b8;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #000;
+    --bs-btn-disabled-opacity: 0.6;
+    --bs-btn-focus-box-shadow: none;
+    --bs-btn-box-shadow: none;
+
     background: #fff;
     border: 2px solid #000;
     border-radius: 4px;
@@ -160,13 +421,11 @@ hr {
     background: #fff;
     color: #000;
     border-color: #000;
-    border-radius: 4px;
 }
 
 /* Active = clic en cours (temporaire) */
 .btn:active {
     background: #000;
-    border-radius: 6px;
     color: #fff;
     border-color: #000;
 }
@@ -181,7 +440,6 @@ hr {
 .btn.disabled {
     background: #fff;
     border: 2px solid #000;
-    border-radius: 4px;
     color: #b6b7b8;
     cursor: not-allowed;
     opacity: 0.6;
@@ -190,28 +448,25 @@ hr {
 
 /* Button Primary - Bleu (Apple QuickDraw Blue assombri) */
 .btn-primary {
-    border: 3px solid #0033cc;
-    border-radius: 6px;
+    border: 2px solid #151515;
     background: #fff;
-    color: #0033cc;
+    color: #151515;
 }
 
 .btn-primary:hover {
-    background: #0033cc;
+    background: #151515;
     color: #fff;
-    border-color: #0033cc;
-    border-radius: 6px;
+    border-color: #151515;
 }
 
 .btn-primary:active {
-    border-radius: 8px;
     background: #000;
     color: #fff;
     border-color: #000;
 }
 
 .btn-primary:focus-visible {
-    outline: 2px dashed #0033cc;
+    outline: 2px dashed #151515;
     outline-offset: 3px;
 }
 
@@ -219,7 +474,6 @@ hr {
 .btn-secondary {
     background: #fff;
     border: 2px solid #555555;
-    border-radius: 4px;
     color: #555555;
 }
 
@@ -232,7 +486,6 @@ hr {
 
 .btn-secondary:active {
     background: #000;
-    border-radius: 6px;
     color: #fff;
     border-color: #000;
 }
@@ -246,7 +499,6 @@ hr {
 .btn-success {
     background: #fff;
     border: 2px solid #006600;
-    border-radius: 4px;
     color: #006600;
 }
 
@@ -254,12 +506,10 @@ hr {
     background: #006600;
     color: #fff;
     border-color: #006600;
-    border-radius: 4px;
 }
 
 .btn-success:active {
     background: #000;
-    border-radius: 6px;
     color: #fff;
     border-color: #000;
 }
@@ -402,6 +652,138 @@ hr {
 .btn-dark:focus-visible {
     outline: 2px dashed #000;
     outline-offset: 3px;
+}
+
+/* Override Bootstrap local CSS variables for each button variant */
+/* This is CRITICAL because Bootstrap defines these variables locally on each .btn-* class */
+/* which overrides the :root definitions. We must redefine them here to prevent blue active states. */
+
+.btn-primary {
+    --bs-btn-color: #0033cc;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #151515;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0033cc;
+    --bs-btn-hover-border-color: #0033cc;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-disabled-color: #b6b7b8;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #151515;
+    --bs-btn-focus-shadow-rgb: 0, 51, 204;
+}
+
+.btn-secondary {
+    --bs-btn-color: #555555;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #555555;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #555555;
+    --bs-btn-hover-border-color: #555555;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-disabled-color: #b6b7b8;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #555555;
+    --bs-btn-focus-shadow-rgb: 85, 85, 85;
+}
+
+.btn-success {
+    --bs-btn-color: #006600;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #006600;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #006600;
+    --bs-btn-hover-border-color: #006600;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-disabled-color: #b6b7b8;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #006600;
+    --bs-btn-focus-shadow-rgb: 0, 102, 0;
+}
+
+.btn-danger {
+    --bs-btn-color: #aa0000;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #aa0000;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #aa0000;
+    --bs-btn-hover-border-color: #aa0000;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-disabled-color: #b6b7b8;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #aa0000;
+    --bs-btn-focus-shadow-rgb: 170, 0, 0;
+}
+
+.btn-warning {
+    --bs-btn-color: #cc5500;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #cc5500;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #cc5500;
+    --bs-btn-hover-border-color: #cc5500;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-disabled-color: #b6b7b8;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #cc5500;
+    --bs-btn-focus-shadow-rgb: 204, 85, 0;
+}
+
+.btn-info {
+    --bs-btn-color: #0099cc;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #0099cc;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0099cc;
+    --bs-btn-hover-border-color: #0099cc;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-disabled-color: #b6b7b8;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #0099cc;
+    --bs-btn-focus-shadow-rgb: 0, 153, 204;
+}
+
+.btn-light {
+    --bs-btn-color: #666666;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #999999;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #999999;
+    --bs-btn-hover-border-color: #999999;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-disabled-color: #b6b7b8;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #999999;
+    --bs-btn-focus-shadow-rgb: 153, 153, 153;
+}
+
+.btn-dark {
+    --bs-btn-color: #000;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #000;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #000;
+    --bs-btn-hover-border-color: #000;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-disabled-color: #b6b7b8;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #000;
+    --bs-btn-focus-shadow-rgb: 0, 0, 0;
 }
 
 /* ============================================
