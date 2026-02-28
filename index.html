@@ -236,6 +236,63 @@
             </div>
         </section>
 
+        <!-- Code Examples Section -->
+        <section id="code-examples" class="mb-5">
+            <h2>Exemples de Code</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Exemple HTML</h5>
+                            <p class="card-text">Structure de base d'une card Bootstrap :</p>
+                            <pre><code>&lt;div class="card"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Titre&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Contenu...&lt;/p&gt;
+    &lt;button class="btn btn-primary"&gt;Action&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Exemple CSS</h5>
+                            <p class="card-text">Variables system.css personnalisées :</p>
+                            <pre><code>:root {
+  --surface: #c0c0c0;
+  --button-highlight: #ffffff;
+  --button-shadow: #808080;
+  --window-title: #000000;
+  --dialog-blue: #000080;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard Dialog with Code -->
+            <div class="standard-dialog mt-4" style="max-width: 500px; margin: 20px auto;">
+                <p class="heading center">JavaScript Example</p>
+                <p style="margin: 10px 0;">Initialisation Bootstrap Modal :</p>
+                <pre style="margin: 10px;"><code>// Ouvrir une modal Bootstrap
+const modal = new bootstrap.Modal(
+  document.getElementById('myModal')
+);
+modal.show();
+
+// Écouter l'événement de fermeture
+modal._element.addEventListener(
+  'hidden.bs.modal',
+  () => console.log('Modal fermée')
+);</code></pre>
+                <div style="text-align: center; margin-top: 15px;">
+                    <button class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </section>
+
         <!-- Alerts Section -->
         <section id="alerts" class="mb-5">
             <h2>Alerts Bootstrap</h2>
