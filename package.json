@@ -6,7 +6,9 @@
   "scripts": {
     "css:minify": "csso css/bootstrap-system-theme.css -o css/bootstrap-system-theme.min.css",
     "css:watch": "csso css/bootstrap-system-theme.css -o css/bootstrap-system-theme.min.css --watch",
-    "css:minify:stats": "csso css/bootstrap-system-theme.css -o css/bootstrap-system-theme.min.css --stat"
+    "css:minify:stats": "csso css/bootstrap-system-theme.css -o css/bootstrap-system-theme.min.css --stat",
+    "css:optimize": "postcss css/bootstrap-system-theme.css -o css/bootstrap-system-theme.optimized.css",
+    "css:optimize:check": "postcss css/bootstrap-system-theme.css --no-map"
   },
   "keywords": [
     "bootstrap",
@@ -18,6 +20,10 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "csso-cli": "^4.0.2"
+    "csso-cli": "^4.0.2",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "cssnano": "^7.0.6",
+    "cssnano-preset-advanced": "^7.0.6"
   }
 }
