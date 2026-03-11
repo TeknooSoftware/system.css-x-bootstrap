@@ -1110,7 +1110,7 @@ textarea.form-control:focus {
     background-color: #fff;
     border: .1em solid #000;
     flex-direction: column;
-    font-family: Inconsolata, Menlo, Chicago, Geneva;
+    font-family: Chicago_12, Inconsolata, Menlo, Chicago, Geneva, sans-serif;
     margin: 1rem;
     min-width: 320px;
     overflow: hidden;
