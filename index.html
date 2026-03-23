@@ -198,6 +198,65 @@
                         <button type="submit" class="btn btn-primary">Envoyer</button>
                         <button type="reset" class="btn btn-secondary">Réinitialiser</button>
                     </form>
+
+                    <h2 class="card-title mt-5">Formulaire avec erreurs de validation</h2>
+
+                    <form class="was-validated" novalidate>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="firstNameErr" class="form-label">Prénom</label>
+                                <input type="text" class="form-control" id="firstNameErr" value="Jean" required>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Veuillez saisir votre prénom.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastNameErr" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="lastNameErr" value="Dupont" required>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Veuillez saisir votre nom.</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="emailErr" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailErr" value="not-an-email" required>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Veuillez saisir une adresse email valide.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="countryErr" class="form-label">Pays</label>
+                            <select class="form-select" id="countryErr" required>
+                                <option value="">Choisir...</option>
+                                <option>France</option>
+                                <option>Belgique</option>
+                                <option>Suisse</option>
+                                <option>Canada</option>
+                            </select>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Veuillez sélectionner un pays.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="messageErr" class="form-label">Message</label>
+                            <textarea class="form-control" id="messageErr" rows="3" required></textarea>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Ce champ est obligatoire.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="termsErr" required>
+                                <label class="form-check-label" for="termsErr">
+                                    J'accepte les conditions d'utilisation
+                                </label>
+                                <div class="invalid-feedback">Vous devez accepter les conditions.</div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <button type="reset" class="btn btn-secondary">Réinitialiser</button>
+                    </form>
                 </div>
             </div>
         </section>
