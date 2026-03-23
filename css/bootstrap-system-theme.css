@@ -1012,6 +1012,11 @@ textarea.form-control:focus {
     color: #fff;
 }
 
+.table-hover > tbody > tr:hover > * a,
+.table-hover > tbody > tr:hover > * a:hover {
+    color: #fff;
+}
+
 /* ============================================
    12. BOOTSTRAP NAVBAR OVERRIDE
    ============================================ */
