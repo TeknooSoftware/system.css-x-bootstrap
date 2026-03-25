@@ -1114,9 +1114,12 @@ textarea.form-control:focus {
 .window {
     background-color: #fff;
     border: .1em solid #000;
+    display: flex;                                          /* ADD */
     flex-direction: column;
     font-family: Chicago_12, Inconsolata, Menlo, Chicago, Geneva, sans-serif;
     margin: 1rem;
+    min-height: 0;       /* Allow flex shrinking below content size */
+    max-height: calc(100vh - 9rem); /* ADD (2rem = top+bottom margin) */
     min-width: 320px;
     overflow: hidden;
 }
@@ -1219,9 +1222,10 @@ textarea.form-control:focus {
 /* Window Pane */
 .window-pane {
     font-size: 22px;
-    height: 100%;
+    flex: 1 1 auto;        /* CHANGE from height: 100% */
     letter-spacing: -.025em;
-    overflow-y: scroll;
+    min-height: 0;         /* ADD — required for flex children to shrink below content size */
+    overflow-y: auto;      /* CHANGE from scroll — only show scrollbar when needed */
     padding: 1rem 2rem;
 }
 
