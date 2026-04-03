@@ -276,7 +276,7 @@
    ============================================ */
 body {
     background: linear-gradient(90deg, #fff 21px, transparent 1%) 50%,
-                linear-gradient(#fff 21px, transparent 1%) 50%, #000;
+    linear-gradient(#fff 21px, transparent 1%) 50%, #000;
     background-attachment: fixed;
     background-size: 22px 22px;
     font-family: Chicago_12, Inconsolata, Menlo, Chicago, Geneva, sans-serif;
@@ -288,24 +288,24 @@ body {
 /* ============================================
    4. TYPOGRAPHY
    ============================================ */
- .h1, .h2, .h3, .h4, .h5, .h6,h1, h2, h3, h4, h5, h6 {
+.h1, .h2, .h3, .h4, .h5, .h6,h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     line-height: normal;
 }
 
- .h1,h1 {
+.h1,h1 {
     font-size: 1em;
 }
 
- .h1, .h2,h1,h2 {
+.h1, .h2,h1,h2 {
     font-family: Chicago;
 }
 
- .h2,h2 {
+.h2,h2 {
     font-size: 2em;
 }
 
- .h3, .h4, .h5, .h6,h3, h4, h5, h6 {
+.h3, .h4, .h5, .h6,h3, h4, h5, h6 {
     font-family: Chicago_12;
     font-size: 1em;
 }
@@ -319,7 +319,7 @@ body {
 }
 
 /* Override Bootstrap lead class */
- .lead,p {
+.lead,p {
     font-family: Chicago_12;
     font-size: 22px;
     font-weight: normal;
@@ -368,7 +368,7 @@ pre code {
 
 ::-webkit-scrollbar-track {
     background: linear-gradient(45deg, #000 25%, transparent 0, transparent 75%, #000 0, #000),
-                linear-gradient(45deg, #000 25%, transparent 0, transparent 75%, #000 0, #000);
+    linear-gradient(45deg, #000 25%, transparent 0, transparent 75%, #000 0, #000);
     background-color: #fff;
     background-position: 0 0, 2px 2px;
     background-size: 4px 4px;
@@ -1033,6 +1033,9 @@ textarea.form-control:focus {
 .navbar-brand {
     color: #000 !important;
     padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .navbar-brand:hover {
@@ -1040,11 +1043,33 @@ textarea.form-control:focus {
     color: #fff !important;
 }
 
+.navbar-brand:hover .brand-icon {
+    filter: invert(1);
+}
+
 .navbar-nav .nav-link {
     color: #000 !important;
     padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
+.navbar-brand img,
+.navbar-brand svg,
+.navbar-nav .nav-link img,
+.navbar-nav .nav-link svg,
+.dropdown-item img,
+.dropdown-item svg {
+    height: 1em;
+    width: auto;
+    flex-shrink: 0;
+}
+
+
+.navbar-nav .nav-link:not(:has(svg, img)) {
+    padding-left: calc(10px + 1em + 4px);
+}
 
 .navbar-nav .nav-link:focus,.navbar-nav .nav-link:hover {
     background: #000;
@@ -1067,8 +1092,15 @@ textarea.form-control:focus {
 .dropdown-item {
     color: #000;
     font-family: Chicago_12;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
+
+.dropdown-item:not(:has(svg, img)) {
+    padding-left: calc(var(--bs-dropdown-item-padding-x) + 1em + 6px);
+}
 
 .dropdown-item:focus,.dropdown-item:hover {
     background: #000;
@@ -1163,7 +1195,7 @@ textarea.form-control:focus {
 
 .title-bar button.close::before {
     background: linear-gradient(#000, #000) 0, linear-gradient(#000, #000) 100%,
-                linear-gradient(#000, #000) top, linear-gradient(#000, #000) bottom;
+    linear-gradient(#000, #000) top, linear-gradient(#000, #000) bottom;
     background-repeat: no-repeat;
     background-size: 30% 4px, 30% 4px, 4px 30%, 4px 30%;
 }
@@ -1180,10 +1212,10 @@ textarea.form-control:focus {
 
 .title-bar button.close::after {
     background: linear-gradient(#000, #000) 0, linear-gradient(#000, #000) 100%,
-                linear-gradient(#000, #000) top, linear-gradient(#000, #000) bottom;
+    linear-gradient(#000, #000) top, linear-gradient(#000, #000) bottom;
     background-repeat: no-repeat;
     background-size: 22.5% 3.6363636364px, 22.5% 3.6363636364px,
-                     3.6363636364px 22.5%, 3.6363636364px 22.5%;
+    3.6363636364px 22.5%, 3.6363636364px 22.5%;
     transform: rotate(45deg) scale(1.1);
 }
 
@@ -1194,7 +1226,7 @@ textarea.form-control:focus {
 
 .title-bar button.resize {
     background: linear-gradient(#000, #000) left 58%,
-                linear-gradient(180deg, #000, #000) 58% top;
+    linear-gradient(180deg, #000, #000) 58% top;
     background-color: #fff;
     background-repeat: no-repeat;
     background-size: 60% 4px, 4px 60%;
@@ -1236,7 +1268,7 @@ textarea.form-control:focus {
 
 .window-pane::-webkit-scrollbar-track {
     background: linear-gradient(45deg, #000 25%, transparent 0, transparent 75%, #000 0, #000),
-                linear-gradient(45deg, #000 25%, transparent 0, transparent 75%, #000 0, #000);
+    linear-gradient(45deg, #000 25%, transparent 0, transparent 75%, #000 0, #000);
     background-color: #fff;
     background-position: 0 0, 2px 2px;
     background-size: 4px 4px;
@@ -1274,15 +1306,19 @@ textarea.form-control:focus {
     font-family: Chicago_12;
 }
 
-/* Apple Logo */
-.apple {
-    background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='22' viewBox='0 0 9 11'%3E%3Cpath d='M5 0h2v1H5zM4 1h2v1H4zm0 1h1v1H4zM1 3h3v1H1zm4 0h3v1H5zM0 4h9v1H0zm0 1h7v2H0zm0 2h9v2H0zm1 2h7v1H1zm1 1h2v1H2zm3 0h2v1H5z'/%3E%3C/svg%3E");
+/* Brand Icon — generic container for navbar brand icons */
+.brand-icon {
     background-repeat: no-repeat;
     border: none;
     display: inline-block;
     height: 22px;
     margin-right: 2px;
     width: 18px;
+}
+
+/* Apple Logo */
+.apple {
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='22' viewBox='0 0 9 11'%3E%3Cpath d='M5 0h2v1H5zM4 1h2v1H4zm0 1h1v1H4zM1 3h3v1H1zm4 0h3v1H5zM0 4h9v1H0zm0 1h7v2H0zm0 2h9v2H0zm1 2h7v1H1zm1 1h2v1H2zm3 0h2v1H5z'/%3E%3C/svg%3E");
 }
 
 /* Menu Items */
