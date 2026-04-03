@@ -1311,3 +1311,7 @@ textarea.form-control:focus {
 .field-row > * + * {
     margin-left: 6px;
 }
+
+.nav-item.dropdown .dropdown-item {
+    font-size: 22px;
+}
