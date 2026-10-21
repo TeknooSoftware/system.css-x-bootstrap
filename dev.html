@@ -4,10 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap 5 + System.css Theme Demo</title>
+    <!-- Demo theme mode, applied before first paint (no flash) -->
+    <script>
+        (function (root) {
+            var mode = null, scheme = null;
+            try {
+                mode = localStorage.getItem('system-theme:mode');
+                scheme = localStorage.getItem('system-theme:scheme');
+            } catch (e) {}
+            if (mode === 'modern') {
+                root.classList.add('system-modern');
+            }
+            if (scheme === 'dark') {
+                root.setAttribute('data-bs-theme', 'dark');
+            } else if (mode === 'modern') {
+                root.setAttribute('data-bs-theme', 'light');
+            }
+        })(document.documentElement);
+    </script>
+    <!-- Legacy font, ready when switching back from System Modern -->
+    <link rel="preload" href="fonts/ChiKareGo2.woff2" as="font" type="font/woff2" crossorigin>
     <!-- Bootstrap 5.3.8 CSS (Local) -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- System.css Theme Override -->
     <link href="css/bootstrap-system-theme.css" rel="stylesheet">
+    <!-- Demo-only styles -->
+    <style>
+        .demo-footer {
+            background: #fff;
+            border-top: 1px solid #000;
+            text-align: center;
+        }
+
+        /* Classic Night mirror (same guard as theme section 17) */
+        .demo-footer:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)) {
+            background: var(--sc-paper);
+            border-top-color: var(--sc-ink);
+        }
+
+        /* Clears the (taller) modern fixed navbar */
+        .system-modern body,
+        body.system-modern {
+            padding-top: 1.25rem;
+        }
+
+        /* Room for the offset shadow between demo buttons */
+        .system-modern .card-body > .btn,
+        .system-modern form > .btn {
+            margin: .25rem .25rem .25rem 0;
+        }
+
+        .system-modern .demo-footer {
+            background: transparent;
+            border-top: 0;
+        }
+
+        /* Nava dock pill */
+        .system-modern .demo-footer > p {
+            -webkit-backdrop-filter: var(--sm-blur);
+            backdrop-filter: var(--sm-blur);
+            background-color: var(--sm-glass);
+            border: 1px solid var(--sm-glass-border);
+            border-radius: 999px;
+            box-shadow: inset 0 1px 0 var(--sm-highlight), 2px 2px 0 var(--sm-offset), var(--bs-box-shadow);
+            color: var(--sm-ink-2);
+            display: inline-block;
+            font-size: .8125rem;
+            margin: 0;
+            padding: .5rem 1.25rem;
+        }
+
+        /* No color fade while switching legacy <-> modern */
+        html.sm-switching *,
+        html.sm-switching *::before,
+        html.sm-switching *::after {
+            transition: none !important;
+        }
+
+        /* Badge tones, modern only (legacy badges stay monochrome) */
+        .system-modern #badges .badge:nth-child(2) {
+            --sm-b-text: var(--bs-secondary-text-emphasis);
+            --sm-b-bg: var(--bs-secondary-bg-subtle);
+            --sm-b-border: var(--bs-secondary-border-subtle);
+        }
+
+        .system-modern #badges .badge:nth-child(3) {
+            --sm-b-text: var(--bs-success-text-emphasis);
+            --sm-b-bg: var(--bs-success-bg-subtle);
+            --sm-b-border: var(--bs-success-border-subtle);
+        }
+
+        .system-modern #badges .badge:nth-child(4) {
+            --sm-b-text: var(--bs-danger-text-emphasis);
+            --sm-b-bg: var(--bs-danger-bg-subtle);
+            --sm-b-border: var(--bs-danger-border-subtle);
+        }
+
+        .system-modern #badges .badge:nth-child(5) {
+            --sm-b-text: var(--bs-warning-text-emphasis);
+            --sm-b-bg: var(--bs-warning-bg-subtle);
+            --sm-b-border: var(--bs-warning-border-subtle);
+        }
+
+        .system-modern #badges .badge:nth-child(6) {
+            --sm-b-text: var(--bs-info-text-emphasis);
+            --sm-b-bg: var(--bs-info-bg-subtle);
+            --sm-b-border: var(--bs-info-border-subtle);
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar Bootstrap with System.css Theme -->
@@ -17,7 +121,7 @@
                 <span class="brand-icon apple" role="img" aria-label="Apple"></span>
                 System Bootstrap
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -47,6 +151,11 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
+                <!-- Theme switcher (demo) -->
+                <div class="d-flex align-items-center gap-2 ms-lg-3 py-2 py-lg-0" role="group" aria-label="Theme">
+                    <button type="button" class="btn btn-sm" id="toggle-modern" aria-pressed="false" title="Switch between System (legacy) and System Modern">Modern</button>
+                    <button type="button" class="btn btn-sm" id="toggle-night" aria-pressed="false" title="Switch between day and Night (legacy and System Modern)">Night</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -545,11 +654,84 @@ modal._element.addEventListener(
     </div>
 
     <!-- Footer -->
-    <footer class="py-4" style="background: #fff; border-top: 1px solid #000; text-align: center;">
+    <footer class="py-4 demo-footer">
         <p>&copy; 2025 Bootstrap 5 + System.css Theme Demo</p>
     </footer>
 
     <!-- Bootstrap 5.3.8 JavaScript Bundle (Local) -->
     <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Theme switcher (demo): legacy <-> System Modern, Light <-> Night -->
+    <script>
+        (function (root) {
+            var KEY_MODE = 'system-theme:mode';
+            var KEY_SCHEME = 'system-theme:scheme';
+            var modernBtn = document.getElementById('toggle-modern');
+            var nightBtn = document.getElementById('toggle-night');
+
+            function read(key) {
+                try {
+                    return localStorage.getItem(key);
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            function write(key, value) {
+                try {
+                    localStorage.setItem(key, value);
+                } catch (e) {}
+            }
+
+            var state = {
+                modern: root.classList.contains('system-modern'),
+                night: read(KEY_SCHEME) === 'dark'
+            };
+
+            function apply() {
+                root.classList.add('sm-switching');
+                root.classList.toggle('system-modern', state.modern);
+                if (state.night) {
+                    root.setAttribute('data-bs-theme', 'dark');
+                } else if (state.modern) {
+                    root.setAttribute('data-bs-theme', 'light');
+                } else {
+                    root.removeAttribute('data-bs-theme');
+                }
+
+                modernBtn.setAttribute('aria-pressed', String(state.modern));
+                modernBtn.classList.toggle('active', state.modern);
+                nightBtn.setAttribute('aria-pressed', String(state.night));
+                nightBtn.classList.toggle('active', state.night);
+
+                void root.offsetWidth;
+                requestAnimationFrame(function () {
+                    root.classList.remove('sm-switching');
+                });
+            }
+
+            modernBtn.addEventListener('click', function () {
+                state.modern = !state.modern;
+                write(KEY_MODE, state.modern ? 'modern' : 'legacy');
+                apply();
+            });
+
+            nightBtn.addEventListener('click', function () {
+                state.night = !state.night;
+                write(KEY_SCHEME, state.night ? 'dark' : 'light');
+                apply();
+            });
+
+            window.addEventListener('storage', function (event) {
+                if (event.key === KEY_MODE || event.key === KEY_SCHEME) {
+                    state.modern = read(KEY_MODE) === 'modern';
+                    state.night = read(KEY_SCHEME) === 'dark';
+                    apply();
+                }
+            });
+
+            apply();
+        })(document.documentElement);
+    </script>
 </body>
 </html>
