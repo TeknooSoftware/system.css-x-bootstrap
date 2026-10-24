@@ -3348,6 +3348,14 @@ body.system-modern::-webkit-scrollbar-corner {
     color: var(--bs-body-color);
 }
 
+/* No blur while a nested modal or offcanvas is shown (Bootstrap sets aria-modal from display:block to display:none):
+   backdrop-filter would make the window its containing block and trap it under the .modal-backdrop of <body>.
+   The backdrop blurs the window meanwhile. */
+.system-modern .window:has([aria-modal="true"]) {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
 /* Kills the 1-bit stripes, redrawn on ::before */
 .system-modern .title-bar {
     background: none;
