@@ -1108,6 +1108,29 @@ textarea.form-control:focus {
 }
 
 /* ============================================
+   12.1 DESKTOP ICONS (grid of icons of teknoo/east-ux, `.desktop-icon`)
+   ============================================ */
+.desktop-icon {
+    border-radius: 0;
+    color: #000;
+}
+
+.desktop-icon-label {
+    padding: 0 3px;
+}
+
+/* The name is inverted, as the name of a selected icon of the Finder; the icon keeps its ink */
+.desktop-icon:focus-visible,.desktop-icon:hover {
+    background: none;
+    color: #000;
+}
+
+.desktop-icon:focus-visible .desktop-icon-label,.desktop-icon:hover .desktop-icon-label {
+    background: #000;
+    color: #fff;
+}
+
+/* ============================================
    13. BOOTSTRAP BADGES OVERRIDE
    ============================================ */
 .badge {
@@ -3125,6 +3148,33 @@ body.system-modern::-webkit-scrollbar-corner {
     opacity: 1;
 }
 
+/* Desktop icons (`.desktop-icon` of teknoo/east-ux): a tile highlighted in accent, as the menu items */
+.system-modern .desktop-icon {
+    border-radius: var(--sm-r-md);
+    color: var(--bs-body-color);
+    transition: background-color var(--sm-dur-1) var(--sm-ease), color var(--sm-dur-1) var(--sm-ease);
+}
+
+.system-modern .desktop-icon-label {
+    padding: 0;
+}
+
+.system-modern .desktop-icon:focus-visible,.system-modern .desktop-icon:hover {
+    background-color: rgba(var(--sm-accent-rgb), .18);
+    color: var(--bs-body-color);
+}
+
+.system-modern .desktop-icon:focus-visible .desktop-icon-label,
+.system-modern .desktop-icon:hover .desktop-icon-label {
+    background: none;
+    color: inherit;
+}
+
+.system-modern .desktop-icon:active {
+    background-color: rgba(var(--sm-accent-rgb), .32);
+    box-shadow: inset 0 0 0 1px var(--sm-state-edge, transparent);
+}
+
 /* 16.13 Badges and pagination
    Badges: mono uppercase tonal pills (tone hooks --sm-b-*). Pagination: segmented glass pill. */
 .system-modern .badge {
@@ -4517,6 +4567,18 @@ textarea.form-control:focus:where(:is([data-bs-theme="dark"], [data-bs-theme="da
 
 .dropdown-item:focus:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)),
 .dropdown-item:hover:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)) {
+    background: var(--sc-ink);
+    color: var(--sc-paper);
+}
+
+
+.desktop-icon:focus-visible:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)),
+.desktop-icon:hover:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)),.desktop-icon:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)) {
+    color: var(--sc-ink);
+}
+
+.desktop-icon:focus-visible .desktop-icon-label:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)),
+.desktop-icon:hover .desktop-icon-label:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)) {
     background: var(--sc-ink);
     color: var(--sc-paper);
 }
