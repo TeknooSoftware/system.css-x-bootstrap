@@ -939,6 +939,17 @@ textarea.form-control:focus {
     font-family: Chicago_12;
 }
 
+/* System 6 modal dialog frame (1px ink, 2px paper, 2px ink, no drop shadow)
+   at this theme's scale, from the outside in: 2px ink, 4px paper, 4px ink
+   (a 2px ring plus the 2px border). The rings are box-shadows, so nothing
+   moves. They reach 8px out, so they start where Bootstrap gives the dialog
+   a 1.75rem margin; below that the dialog keeps its drop shadow. */
+@media (min-width:576px) {
+    .modal-content {
+        box-shadow: 0 0 0 2px #000, 0 0 0 6px #fff, 0 0 0 8px #000;
+    }
+}
+
 .modal-header {
     border-bottom: .1rem solid #000;
     background-color: #fff;
@@ -1169,6 +1180,7 @@ textarea.form-control:focus {
 .window {
     background-color: #fff;
     border: .1em solid #000;
+    box-shadow: 2px 2px; /* System 6 window drop shadow, at this theme's 2px line weight */
     display: flex;                                          /* ADD */
     flex-direction: column;
     font-family: Chicago_12, Inconsolata, Menlo, Chicago, Geneva, sans-serif;
@@ -4471,6 +4483,12 @@ textarea.form-control:focus:where(:is([data-bs-theme="dark"], [data-bs-theme="da
 .modal-content:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)) {
     background-color: var(--sc-paper);
     border-color: var(--sc-ink);
+}
+
+@media (min-width:576px) {
+    .modal-content:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)) {
+        box-shadow: 0 0 0 2px var(--sc-ink), 0 0 0 6px var(--sc-paper), 0 0 0 8px var(--sc-ink);
+    }
 }
 
 .modal-header:where(:is([data-bs-theme="dark"], [data-bs-theme="dark"] *):not(.system-modern, .system-modern *)) {
